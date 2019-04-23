@@ -1,1 +1,0 @@
-<textarea<?php echo($style);?> name="<?php echo($inputname);?>" cols="60" rows="6"  class="textarea"><?php echo(htmlspecialchars($inputvalue));?></textarea>
