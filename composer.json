@@ -1,6 +1,8 @@
 {
   "name": "winter/winter-tools-test",
   "description": "Cms blog",
+  "minimum-stability": "dev",
+  "license": "MIT",
   "require": {
     "php": "^7.2",
     "another-vendor/package": "1.0"
