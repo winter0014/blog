@@ -1,0 +1,13 @@
+<!-- 最新文章<?php if(!defined('ucms'))exit; ?> -->
+<div class="box">
+	<p>最新文章</p>
+	<ul>
+		<?php $set=array(); ?>
+		<?php $set['pagesize']='15'; ?>
+		<?php $set['column']='id,title'; ?>
+		<?php $articles=alist($set); ?>
+		<?php foreach($articles['list'] as $a){ ?>
+			<li><a href="<?php echo($a['link']); ?>" target="_blank"><?php echo($a['title']); ?></a></li>
+		<?php } ?>
+	</ul>
+</div>

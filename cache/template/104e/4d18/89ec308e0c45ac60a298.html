@@ -1,0 +1,45 @@
+<?php $set=array(); ?>
+<?php $set['where']['id']=intval($_GET['id']); ?>
+<?php $article=a($set); ?>
+<?php if(!$article){ ?>
+	<?php echo(notfound()); ?>
+<?php } ?>
+<!DOCTYPE html>
+<!-- 文章页<?php if(!defined('ucms'))exit; ?> -->
+<html>
+<head>
+<meta charset="utf-8"/>
+<title><?php echo($article['title']); ?></title>
+<?php if(isset($article['keywords'])){ ?>
+<meta name="keywords" content="<?php echo($article['keywords']); ?>"/>
+<?php } ?>
+<?php if(isset($article['description'])){ ?>
+<meta name="description" content="<?php echo($article['description']); ?>"/>
+<?php } ?>
+<meta name="viewport" content="width=device-width"/>
+<link rel="stylesheet" type="text/css" href="<?php echo('/template/'); ?>css/style.css" />
+</head>
+<body>
+<?php @include('/www/index/cache/template/ac15/2b26/26bc4f8a9e1d44643402.html'); ?>
+<div class="main warp">
+	<div class="main_left">
+		<div class="page_content">
+			<h1><?php echo($article['title']); ?></h1>
+			<div class="article_content">
+			<?php if(isset($article['content'])){ ?>
+				<?php echo($article['content']); ?>
+			<?php }else{ ?>
+				内容字段尚未增加
+			<?php } ?>
+			</div>
+		</div>
+	</div>
+	<div class="main_right">
+		<?php @include('/www/index/cache/template/c719/f502/aab5457964cef43c1d1c.html'); ?>
+		<?php @include('/www/index/cache/template/1a61/4b77/57c5bf39f573c71edaab.html'); ?>
+		<?php @include('/www/index/cache/template/fac3/508e/4450c10d3d7a76089678.html'); ?>
+	</div>
+</div>
+<?php @include('/www/index/cache/template/9ebb/9740/b7f298d71b315741e797.html'); ?>
+</body>
+</html>
