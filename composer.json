@@ -1,0 +1,8 @@
+{
+  "name": "winter/winter-tools-test",
+  "description": "Cms blog",
+  "require": {
+    "php": "^7.2",
+    "another-vendor/package": "1.0"
+  }
+}
