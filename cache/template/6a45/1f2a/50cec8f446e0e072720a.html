@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- 首页<?php if(!defined('ucms'))exit; ?> -->
+<html>
+<head>
+<meta charset="utf-8"/>
+<title><?php echo(z('站点标题')); ?></title>
+<meta name="keywords" content="<?php echo(z('关键词')); ?>"/>
+<meta name="description" content="<?php echo(z('描述')); ?>"/>
+<meta name="viewport" content="width=device-width"/>
+<link rel="stylesheet" type="text/css" href="<?php echo('/template/'); ?>css/style.css" />
+</head>
+<body>
+<?php @include('/www/index/cache/template/ac15/2b26/26bc4f8a9e1d44643402.html'); ?>
+<div class="main warp">
+	<div class="main_left">
+	<?php $channels=c('2','12'); ?>
+	<?php foreach($channels as $channel){ ?>
+		<div class="channel">
+			<p><a href="<?php echo($channel['url']); ?>"><?php echo($channel['name']); ?></a></p>
+			<ul>
+			<?php $set=array(); ?>
+			<?php $set['cid']=$channel['cid']; ?>
+			<?php $set['pagesize']='12'; ?>
+			<?php $articles=alist($set); ?>
+			<?php foreach($articles['list'] as $a){ ?>
+				<li><a href="<?php echo($a['link']); ?>" target="_blank"><?php echo($a['title']); ?></a></li>
+			<?php } ?>
+			</ul>
+		</div>
+	<?php } ?>
+	</div>
+	<div class="main_right">
+		<?php @include('/www/index/cache/template/1a61/4b77/57c5bf39f573c71edaab.html'); ?>
+		<?php @include('/www/index/cache/template/fac3/508e/4450c10d3d7a76089678.html'); ?>
+		<div class="box">
+			<p class="box_title">友情链接</p>
+			<p class="box_content">
+			<br>自己动手,丰衣足食<br>
+			<br><a href="http://uuu.la/help/friendlink.html" target="_blank">学习如何搭建友情链接栏目→</a><br>
+			<br><a href="http://uuu.la/help/logo.html" target="_blank">如何自定义LOGO、广告位图片→</a><br>
+			</p>
+		</div>
+	</div>
+</div>
+<?php @include('/www/index/cache/template/9ebb/9740/b7f298d71b315741e797.html'); ?>
+</body>
+</html>
